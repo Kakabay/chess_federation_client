@@ -1,0 +1,265 @@
+.contact {
+  position: relative;
+}
+
+.contact-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  padding: 8rem 0 16rem 0;
+  position: relative;
+}
+
+.contact-bg {
+  z-index: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-height: 75.1rem;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.contact-form {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  background: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  position: relative;
+}
+
+.contact-img {
+  width: 100%;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.contact-form-right {
+  padding: 5rem 3rem 5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.contact-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.4rem;
+}
+
+.contact-title-inner {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+
+  h3 {
+    font-size: 4rem;
+  }
+}
+
+.contact-icon {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  &:last-child {
+    justify-self: flex-end;
+  }
+}
+
+.contact-form-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3rem;
+  justify-content: space-between;
+}
+
+.contact-form-link-left {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #7d7d7d;
+}
+
+.contact-form-link-right {
+  display: flex;
+  gap: 2.4rem;
+  align-items: center;
+}
+
+.contact-form-right-middle {
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+  gap: 1.6rem;
+}
+
+.contact-form-right-bottom,
+.input-blocks-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  button {
+    width: 100%;
+    @include button-std(0.5rem, 2.4rem, true);
+  }
+}
+
+.input-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  label {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  input,
+  textarea {
+    outline: none;
+    color: #000;
+    resize: none;
+    padding: 1.6rem;
+    border: 0.2rem solid #7d7d7d;
+    border-radius: 0.5rem;
+    @include transition-std;
+
+    &:focus {
+      @include transition-std;
+      border: 0.2rem solid $base-green;
+      color: $base-green;
+    }
+  }
+
+  textarea {
+    min-height: 30rem;
+  }
+}
+
+.status {
+  height: 0;
+  opacity: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  @include transition-std;
+
+  &.success {
+    opacity: 1;
+    color: $base-green;
+    height: 2.7rem;
+    @include transition-std;
+  }
+
+  &.error {
+    opacity: 1;
+    @include transition-std;
+    color: rgb(161, 16, 16);
+    height: 2.7rem;
+  }
+}
+
+.form-note {
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.form-warning {
+  color: red;
+  font-size: 1.4rem;
+  text-align: left;
+  height: 100%;
+  max-height: 0;
+  opacity: 0;
+  @include transition-std;
+
+  &.active {
+    opacity: 1;
+    max-height: 1.9rem;
+  }
+}
+
+// Adaptive
+
+@media screen and (max-width: 1150px) {
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+  .contact-form-left {
+    display: none;
+  }
+  .contact-form-right {
+    padding: 5rem 3rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .status {
+    text-align: center;
+  }
+
+  .contact-form-right-middle {
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-form-link {
+    &.links {
+      @include grid(false, 1fr 1fr);
+      flex-direction: row;
+    }
+  }
+  .contact-form-link-right {
+    justify-content: space-around;
+  }
+  .contact-title-inner {
+    h3 {
+      font-size: 3.3rem;
+    }
+  }
+  .contact-inner {
+    gap: 4rem;
+  }
+  .contact-form-right {
+    padding: 3.2rem 1.5rem;
+    gap: 3.2rem;
+  }
+
+  .input-blocks-wrapper {
+    gap: 3.2rem;
+  }
+
+  .contact-title,
+  .contact-title-inner {
+    gap: 1rem;
+  }
+
+  .input-block {
+    textarea {
+      min-height: 20rem;
+    }
+  }
+}

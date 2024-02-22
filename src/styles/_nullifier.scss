@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+}
+
+input,
+button {
+  background: none;
+  outline: none;
+  border: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}

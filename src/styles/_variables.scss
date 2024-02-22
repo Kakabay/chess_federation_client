@@ -1,0 +1,81 @@
+// Colors
+$base-green: #01815e;
+$base-black: #1c1717;
+$base-gray: #f8f8f8;
+$hover-green: #0e654e;
+
+// Flex
+@mixin flex-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-spb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Other
+@mixin transition-std {
+  transition: 0.3s all ease;
+}
+
+@mixin arrow-start {
+  transform: rotateX(0deg);
+  @include transition-std();
+}
+
+@mixin arrow-end {
+  transform: rotateX(180deg);
+  @include transition-std();
+}
+
+@mixin button-end {
+  transform: scale(0.7);
+  @include transition-std();
+}
+
+@mixin button-start {
+  transform: scale(1);
+  @include transition-std();
+}
+
+@mixin button-std($border-radius, $padding, $scaled) {
+  padding: $padding;
+  border-radius: $border-radius;
+  background: $base-green;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+
+  @if $scaled {
+    @include button-start;
+
+    &:active {
+      @include button-end;
+    }
+  }
+
+  &:hover {
+    background: $hover-green;
+    @include transition-std;
+  }
+
+  &:disabled {
+    transition: none;
+    transform: scale(1) !important;
+    background: #7d7d7d !important;
+    cursor: not-allowed;
+  }
+}
+
+@mixin grid($row, $layout) {
+  display: grid;
+  @if $row {
+    grid-template-rows: $layout;
+  } @else {
+    grid-template-columns: $layout;
+  }
+}

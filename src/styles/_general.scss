@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@100;400&display=swap");
+
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  width: 100%;
+  padding: 0 5rem;
+  max-width: 150rem;
+  margin: 0 auto;
+}
+
+.inner-body {
+  min-height: 68vh;
+}
+
+.red {
+  color: red;
+}
+
+body {
+  background: url(../images/body-bg.jpg) repeat center;
+  background-size: cover;
+  background-clip: border-box;
+}
+
+input {
+  @include transition-std;
+}
+
+input:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  @include transition-std;
+}
+
+// Adaptive
+
+@media screen and (max-width: 700px) {
+  .container {
+    padding: 0 2rem;
+  }
+}

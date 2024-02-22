@@ -1,0 +1,252 @@
+.nav {
+  border-bottom: 0.1rem solid $base-green;
+  min-height: 12vh;
+  background: #ffffff;
+}
+
+.nav-inner {
+  padding: 0.7rem 0;
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 0.3fr 1fr;
+}
+
+.nav-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  justify-self: flex-end;
+  gap: 9.6rem;
+  span,
+  a {
+    font-size: 1.8rem;
+    @include transition-std;
+    color: #000;
+    &.active {
+      color: $base-green;
+    }
+  }
+
+  li {
+    position: relative;
+
+    &:not(:last-child) {
+      &::after {
+        position: absolute;
+        top: 0;
+        right: -4.8rem;
+        width: 0.1rem;
+        height: 2.5rem;
+        content: "";
+        background: $base-green;
+      }
+    }
+
+    &:not(:first-child) {
+      &::before {
+        position: absolute;
+        top: calc(100% + 1rem);
+        right: 0;
+        width: 0;
+        height: 0.1rem;
+        content: "";
+        background: $base-green;
+        @include transition-std;
+      }
+    }
+
+    &.active {
+      a {
+        font-size: 1.9rem;
+        color: $base-green;
+        @include transition-std;
+      }
+      &::before {
+        width: 100%;
+        @include transition-std;
+      }
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+        @include transition-std;
+      }
+    }
+  }
+}
+
+.nav-logo a {
+  width: 10rem;
+  height: 10rem;
+  display: flex;
+
+  img {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+
+.nav-non-link {
+  // overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  * {
+    pointer-events: none;
+  }
+
+  .arrow {
+    // fill: black;
+    width: 2rem;
+    height: 2rem;
+    @include arrow-start;
+
+    &.active {
+      fill: $base-green;
+      @include arrow-end;
+    }
+  }
+}
+
+.nav-dropdown {
+  pointer-events: all !important;
+  @include transition-std;
+  height: 11.2rem;
+  overflow: hidden;
+  min-width: 24rem;
+  z-index: 200;
+  display: flex;
+  background: #fff;
+  flex-direction: column;
+  position: absolute;
+  right: -5rem;
+  top: calc(100% + 2rem);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+
+  &.disabled {
+    height: 0;
+    @include transition-std;
+  }
+
+  li {
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+
+  a {
+    @include transition-std;
+    background: #fff;
+    display: block;
+    padding: 1.6rem 1.9rem;
+    text-align: left;
+
+    &:hover {
+      background: #01815e1a;
+      @include transition-std;
+    }
+  }
+}
+
+.nav-burger {
+  display: none;
+  position: relative;
+  padding: 1rem;
+  width: 5.2rem;
+  height: 5rem;
+  cursor: pointer;
+
+  .burger-line-top {
+    @include transition-std;
+    top: 1.4rem;
+  }
+  .burger-line-mid {
+    @include transition-std;
+    top: 2.4rem;
+    opacity: 1;
+  }
+  .burger-line-bot {
+    @include transition-std;
+    top: 3.4rem;
+  }
+
+  &.active {
+    .burger-line-top {
+      @include transition-std;
+      animation: toRotate1 0.3s ease 0.3s forwards 1;
+      top: 2.4rem;
+    }
+    .burger-line-mid {
+      @include transition-std;
+      opacity: 0;
+    }
+    .burger-line-bot {
+      @include transition-std;
+      animation: toRotate2 0.3s ease 0.3s forwards 1;
+      top: 2.4rem;
+    }
+  }
+}
+
+.burger-line {
+  content: "";
+  position: absolute;
+  display: block;
+  background: $base-green;
+  width: 3.2rem;
+  height: 0.3rem;
+  left: 1rem;
+  border-radius: 0.3rem;
+}
+
+// Keyframes
+@keyframes toRotate1 {
+  to {
+    transform: rotate(45deg);
+  }
+}
+@keyframes toRotate2 {
+  to {
+    transform: rotate(-45deg);
+  }
+}
+
+// Adaptive
+
+@media screen and (max-width: 1300px) {
+  .nav {
+    min-height: 9rem;
+  }
+  .nav-logo {
+    a {
+      width: 6.4rem;
+      height: 6.4rem;
+
+      img {
+        width: 6.4rem;
+        height: 6.4rem;
+      }
+    }
+  }
+  .nav-content {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .nav-list {
+    display: none;
+  }
+  .nav-burger {
+    display: block;
+  }
+}

@@ -1,0 +1,84 @@
+.section-title {
+  position: relative;
+  background: $base-gray;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 1.6rem;
+  overflow: hidden;
+}
+
+.section-title-title {
+  font-size: 2.8rem;
+  z-index: 2;
+}
+
+.section-title-deco {
+  z-index: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 46.78rem;
+  overflow: hidden;
+
+  * {
+    background: $base-green;
+    position: absolute;
+  }
+
+  .deco-rotated {
+    top: -1rem;
+    right: 29rem;
+    width: 8rem;
+    height: 200%;
+    transform: rotate(26deg);
+  }
+
+  .deco {
+    right: 0;
+    width: 30rem;
+    height: 100%;
+  }
+}
+
+// Adaptive
+
+@media screen and (max-width: 1000px) {
+  .section-title {
+    padding: 1.2rem;
+  }
+  .section-title-deco {
+    right: -15rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .section-title-deco {
+    right: -25rem;
+  }
+  .section-title-title {
+    font-size: 1.8rem;
+  }
+  .section-title-img {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    img {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .section-title-deco {
+    right: -30rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .section-title-deco {
+    right: -33rem;
+  }
+}
