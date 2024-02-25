@@ -1,4 +1,4 @@
-export const hosting: string = "http://tkf.com.tm/app";
+export const hosting: string = "http://216.250.12.9:8088";
 export const sliderDataUrl: string = hosting + "/api/v1/sliders";
 export const partners: string = hosting + "/api/v1/partners";
 export const postsMain: string =

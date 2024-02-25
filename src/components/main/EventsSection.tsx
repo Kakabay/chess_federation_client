@@ -46,6 +46,8 @@ const EventsSection = () => {
     getMainPosts(setEvents);
   }, []);
 
+  console.log(events);
+
   return (
     <section className="events">
       <div className="container">
