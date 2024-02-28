@@ -51,6 +51,8 @@ const AboutUs = () => {
     getVideos(setVideo, () => null);
   }, []);
 
+  console.log(about, " About");
+
   const breakpoint = useMediaQuery("(max-width: 500px)");
 
   return (

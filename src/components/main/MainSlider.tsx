@@ -41,8 +41,6 @@ const MainSlider = () => {
     500: useMediaQuery("(max-width: 500px)"),
   };
 
-  console.log(slideData);
-
   return (
     <section className="main-slider">
       <Swiper

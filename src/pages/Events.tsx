@@ -63,7 +63,7 @@ const Events = () => {
           <div className="event-page-wrapper">
             <SectionTitle title={"События и новости"} />
             <div className="events-page-inner">
-              {events.loaded
+              {events.loaded && events.data[0].featured_images.length > 0
                 ? events.data.map((evnt) => {
                     return (
                       <Event

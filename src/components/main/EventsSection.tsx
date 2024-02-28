@@ -46,7 +46,7 @@ const EventsSection = () => {
     getMainPosts(setEvents);
   }, []);
 
-  console.log(events);
+  console.log(events, " =======Events section");
 
   return (
     <section className="events">
@@ -54,7 +54,7 @@ const EventsSection = () => {
         <div className="events-inner">
           <SectionTitle title="События и новости" />
           <div className="events-content">
-            {events.loaded
+            {events.loaded && events.data[0].featured_images.length > 0
               ? events.data.map((evnt) => {
                   return (
                     <Event
