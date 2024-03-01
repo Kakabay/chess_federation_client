@@ -1,0 +1,23 @@
+***CHESS***
+
+frontend link: http://216.250.12.9:8080
+
+backend link: http://216.250.12.9:8088
+
+backend admin panel link: http://216.250.12.9:8088/backend
+
+access to admin panel: admin:qazwsx12
+
+
+list for existing API:
+
+http://216.250.12.9:8088/api/v1/videos
+http://216.250.12.9:8088/api/v1/structure
+http://216.250.12.9:8088/api/v1/sliders
+http://216.250.12.9:8088/api/v1/posts
+http://216.250.12.9:8088/api/v1/players
+http://216.250.12.9:8088/api/v1/partners
+http://216.250.12.9:8088/api/v1/events
+http://216.250.12.9:8088/api/v1/contact-info
+http://216.250.12.9:8088/api/v1/about
+

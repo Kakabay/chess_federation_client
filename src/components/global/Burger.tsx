@@ -1,47 +1,33 @@
 // Modules
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 // Types
-import { burgerProps } from "../../types/burger";
+import { burgerProps } from '../../types/burger';
 
 // Icons
-import arrow from "../../icons/arrow-white-up.svg";
+import arrow from '../../icons/arrow-white-up.svg';
 
-const Burger = ({
-  burgerOpen,
-  setBurgerOpen,
-  dropdownBurger,
-  setDropdownBurger,
-}: burgerProps) => {
+const Burger = ({ burgerOpen, setBurgerOpen, dropdownBurger, setDropdownBurger }: burgerProps) => {
   useEffect(() => {
     if (burgerOpen) {
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflowY = "visible";
+      document.body.style.overflowY = 'visible';
     }
   }, [burgerOpen]);
   return (
-    <section className={burgerOpen ? "burger active" : "burger"}>
+    <section className={burgerOpen ? 'burger active' : 'burger'}>
       <div className="burger-inner">
         <ul>
-          <li
-            className={
-              dropdownBurger ? "burger-list-first active" : "burger-list-first"
-            }
-          >
+          <li className={dropdownBurger ? 'burger-list-first active' : 'burger-list-first'}>
             <div
               className="first-inner"
               onClick={() => {
                 setDropdownBurger((initial) => !initial);
-              }}
-            >
+              }}>
               <span>О нас</span>
-              <div
-                className={
-                  dropdownBurger ? "burger-arrow active" : "burger-arrow"
-                }
-              >
+              <div className={dropdownBurger ? 'burger-arrow active' : 'burger-arrow'}>
                 <img src={arrow} alt="" />
               </div>
             </div>
@@ -51,8 +37,7 @@ const Burger = ({
                   to="/about-us"
                   onClick={() => {
                     setBurgerOpen(false);
-                  }}
-                >
+                  }}>
                   О федерации
                 </Link>
               </li>
@@ -61,8 +46,7 @@ const Burger = ({
                   to="/structure"
                   onClick={() => {
                     setBurgerOpen(false);
-                  }}
-                >
+                  }}>
                   Структура федерации
                 </Link>
               </li>
@@ -70,41 +54,37 @@ const Burger = ({
           </li>
           <li>
             <Link
-              to={"/news"}
+              to={'/news'}
               onClick={() => {
                 setBurgerOpen(false);
-              }}
-            >
+              }}>
               Новости и события
             </Link>
           </li>
           <li>
             <Link
-              to={"/tournaments"}
+              to={'/tournaments'}
               onClick={() => {
                 setBurgerOpen(false);
-              }}
-            >
+              }}>
               Турниры
             </Link>
           </li>
           <li>
             <Link
-              to={"/rating"}
+              to={'/rating'}
               onClick={() => {
                 setBurgerOpen(false);
-              }}
-            >
+              }}>
               Рейтинг
             </Link>
           </li>
           <li>
             <Link
-              to={"/contact"}
+              to={'/contact'}
               onClick={() => {
                 setBurgerOpen(false);
-              }}
-            >
+              }}>
               Контакты
             </Link>
           </li>
@@ -114,8 +94,7 @@ const Burger = ({
         className="burger-close-overlay"
         onClick={() => {
           setBurgerOpen(false);
-        }}
-      ></div>
+        }}></div>
     </section>
   );
 };

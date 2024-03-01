@@ -1,57 +1,57 @@
 // Modules
-import React, { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
-import Skeleton from "react-loading-skeleton";
-import { ErrorBoundary } from "react-error-boundary";
+import React, { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import Skeleton from 'react-loading-skeleton';
+import { ErrorBoundary } from 'react-error-boundary';
 
 // Helpers
-import { getEvents } from "../helpers/apiRequests";
-import { dateParser } from "../helpers/dateParser";
-import { highlightColor } from "../helpers/otherVariables";
+import { getEvents } from '../helpers/apiRequests';
+import { dateParser } from '../helpers/dateParser';
+import { highlightColor } from '../helpers/otherVariables';
 
 // Components
-import EmptyState from "../components/global/EmptyState";
-import SectionTitle from "../components/global/SectionTitle";
-import Tournament from "../components/tournaments/Tournament";
+import EmptyState from '../components/global/EmptyState';
+import SectionTitle from '../components/global/SectionTitle';
+import Tournament from '../components/tournaments/Tournament';
 
 // Images
-import match from "../images/match.jpg";
+import match from '../images/match.jpg';
 
 // Types
-import { tournamentType } from "../types/events";
+import { tournamentType } from '../types/events';
 
 const Tournaments = () => {
-  const [tournaments, setTournaments]: [
-    tournamentType[],
-    React.Dispatch<tournamentType[]>
-  ] = useState([
-    {
-      id: -1,
-      current: -1,
-      header: "",
-      events: [
-        {
-          start: "",
-          end: "",
-          name: "",
-          place: "",
-          img: "",
-        },
-      ],
-      translations: [
-        {
-          model_id: "",
-          locale: "",
-          attribute_data: "",
-        },
-      ],
-    },
-  ]);
+  const [tournaments, setTournaments]: [tournamentType[], React.Dispatch<tournamentType[]>] =
+    useState([
+      {
+        id: -1,
+        current: -1,
+        header: '',
+        events: [
+          {
+            start: '',
+            end: '',
+            name: '',
+            place: '',
+            img: '',
+          },
+        ],
+        translations: [
+          {
+            model_id: '',
+            locale: '',
+            attribute_data: '',
+          },
+        ],
+      },
+    ]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     getEvents(setTournaments);
   }, []);
+
+  console.log(tournaments);
 
   return (
     <ErrorBoundary fallback={<EmptyState page={true} />}>
@@ -73,13 +73,10 @@ const Tournaments = () => {
                         className="tournaments-head"
                         style={{
                           background: `linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.9) 0.01%, rgba(0, 0, 0, 0.4) 100%), url(${match}), no-repeat`,
-                        }}
-                      >
+                        }}>
                         <span>{`${dateParser(
-                          tournament.events[0].start.split(" ")[0]
-                        )} - ${dateParser(
-                          tournament.events[0].end.split(" ")[0]
-                        )}`}</span>
+                          tournament.events[0].start.split(' ')[0],
+                        )} - ${dateParser(tournament.events[0].end.split(' ')[0])}`}</span>
                         <h2>{tournament.events[0].name}</h2>
                         <span>{tournament.events[0].place}</span>
                       </div>
@@ -88,11 +85,7 @@ const Tournaments = () => {
                   return null;
                 })
               ) : (
-                <Skeleton
-                  highlightColor={highlightColor}
-                  width={"100%"}
-                  height={"36.2rem"}
-                />
+                <Skeleton highlightColor={highlightColor} width={'100%'} height={'36.2rem'} />
               )}
             </div>
           </div>
@@ -109,31 +102,27 @@ const Tournaments = () => {
                             key={uuidv4()}
                             img={match}
                             name={tournament.events[0].name}
-                            start={dateParser(
-                              tournament.events[0].start.split(" ")[0]
-                            )}
-                            end={dateParser(
-                              tournament.events[0].end.split(" ")[0]
-                            )}
+                            start={dateParser(tournament.events[0].start.split(' ')[0])}
+                            end={dateParser(tournament.events[0].end.split(' ')[0])}
                             place={tournament.events[0].place}
                           />
                         );
                       }
                       return null;
                     })
-                  : ["", "", "", "", "", ""].map(() => {
+                  : ['', '', '', '', '', ''].map(() => {
                       return (
                         <div key={uuidv4()}>
                           <Skeleton
                             highlightColor={highlightColor}
-                            width={"100%"}
-                            height={"26rem"}
-                            style={{ marginBottom: "3.2rem" }}
+                            width={'100%'}
+                            height={'26rem'}
+                            style={{ marginBottom: '3.2rem' }}
                           />
                           <Skeleton
                             highlightColor={highlightColor}
-                            width={"100%"}
-                            height={"2.5rem"}
+                            width={'100%'}
+                            height={'2.5rem'}
                           />
                         </div>
                       );

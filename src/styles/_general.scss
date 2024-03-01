@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@100;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@100;400&display=swap');
 
 * {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .container {
@@ -28,6 +28,14 @@ body {
 
 input {
   @include transition-std;
+}
+
+a {
+  color: black;
+
+  &:hover {
+    color: $hover-green;
+  }
 }
 
 input:disabled {

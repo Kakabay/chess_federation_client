@@ -1,29 +1,24 @@
 // Modules
-import { useRef, useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useRef, useEffect, useState } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 
 // Icons
-import mainLogo from "../../icons/main_logo.svg";
+import mainLogo from '../../icons/main_logo.svg';
 // import { ReactComponent as Arrow } from "../../icons/arrow-down-black.svg";
-import Arrow from "../../icons/arrow-down-black.svg";
+import Arrow from '../../icons/arrow-down-black.svg';
 
 // Types
-import { navProps } from "../../types/burger";
+import { navProps } from '../../types/burger';
 
-const Nav = ({
-  dropdown,
-  setDropdown,
-  burgerOpen,
-  setBurgerOpen,
-  refTrig_1,
-}: navProps) => {
+const Nav = ({ dropdown, setDropdown, burgerOpen, setBurgerOpen, refTrig_1 }: navProps) => {
   const location = useLocation();
   const ref = useRef<any>(null);
   const refTrigger = useRef<any>(null);
+  const [dropDownOpened, setDropDownOpened] = useState<boolean>(false);
 
   useEffect(() => {
     if (ref.current && refTrigger.current && refTrig_1.current) {
-      window.addEventListener("click", (e: any) => {
+      window.addEventListener('click', (e: any) => {
         if (
           !e.target.contains(ref.current) &&
           !e.target.contains(refTrigger.current) &&
@@ -40,69 +35,58 @@ const Nav = ({
       <div className="container">
         <div className="nav-inner">
           <div className="nav-logo">
-            <Link to={"/"}>
+            <Link to={'/'}>
               <img src={mainLogo} alt="" />
             </Link>
           </div>
           <div className="nav-content">
             <ul className="nav-list">
               <li
-                ref={refTrigger}
-                className="nav-non-link"
+                // ref={refTrigger}
+                className=""
                 onClick={() => {
-                  setDropdown((initial) => !initial);
-                }}
-              >
-                <span className={dropdown ? "active" : ""}>О нас</span>
-                <div className={dropdown ? "arrow active" : "arrow"}>
-                  {/* <Arrow className="arrow" /> */}
-                  <img src={Arrow} alt="arr icon" />
+                  // setDropdown((initial) => !initial);
+                  setDropDownOpened((initial) => !initial);
+                  console.log(dropDownOpened);
+                }}>
+                <div className="nav-non-link">
+                  <span className={dropdown ? 'active' : ''}>О нас</span>
+                  <div className={dropdown ? 'arrow active' : 'arrow'}>
+                    {/* <Arrow className="arrow" /> */}
+                    <img src={Arrow} alt="arr icon" />
+                  </div>
                 </div>
-                <ul
-                  ref={ref}
-                  className={
-                    dropdown ? "nav-dropdown" : "nav-dropdown disabled"
-                  }
-                >
-                  <li>
-                    <Link to={"/about-us"}>О федерации</Link>
-                  </li>
-                  <li>
-                    <Link to={"/structure"}>Структура федерации</Link>
-                  </li>
-                </ul>
+                {dropDownOpened && (
+                  <div className={dropDownOpened ? 'nav-dropdown' : 'nav-dropdown disabled'}>
+                    <Link
+                      to={'/about-us'}
+                      onClick={() => {
+                        console.log('Hello');
+                      }}>
+                      О федерации
+                    </Link>
+                    <Link to={'/structure'}>Структура федерации</Link>
+                  </div>
+                )}
               </li>
-              <li
-                className={location.pathname.includes("news") ? "active" : ""}
-              >
-                <Link to={"/news"}>Новости и события</Link>
+              <li className={location.pathname.includes('news') ? 'active' : ''}>
+                <Link to={'/news'}>Новости и события</Link>
               </li>
-              <li
-                className={
-                  location.pathname.includes("tournaments") ? "active" : ""
-                }
-              >
-                <Link to={"/tournaments"}>Турниры</Link>
+              <li className={location.pathname.includes('tournaments') ? 'active' : ''}>
+                <Link to={'/tournaments'}>Турниры</Link>
               </li>
-              <li
-                className={location.pathname.includes("rating") ? "active" : ""}
-              >
-                <Link to={"/rating"}>Рейтинг</Link>
+              <li className={location.pathname.includes('rating') ? 'active' : ''}>
+                <Link to={'/rating'}>Рейтинг</Link>
               </li>
-              <li
-                className={
-                  location.pathname.includes("contact") ? "active" : ""
-                }
-              >
-                <Link to={"/contact"}>Контакты</Link>
+              <li className={location.pathname.includes('contact') ? 'active' : ''}>
+                <Link to={'/contact'}>Контакты</Link>
               </li>
             </ul>
             <div
-              className={burgerOpen ? "nav-burger active" : "nav-burger"}
+              className={burgerOpen ? 'nav-burger active' : 'nav-burger'}
               onClick={() => {
                 setBurgerOpen((initial) => !initial);
-              }}
-            >
+              }}>
               <span className="burger-line burger-line-top"></span>
               <span className="burger-line burger-line-mid"></span>
               <span className="burger-line burger-line-bot"></span>

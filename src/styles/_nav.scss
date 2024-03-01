@@ -42,7 +42,7 @@
         right: -4.8rem;
         width: 0.1rem;
         height: 2.5rem;
-        content: "";
+        content: '';
         background: $base-green;
       }
     }
@@ -54,7 +54,7 @@
         right: 0;
         width: 0;
         height: 0.1rem;
-        content: "";
+        content: '';
         background: $base-green;
         @include transition-std;
       }
@@ -138,19 +138,13 @@
     @include transition-std;
   }
 
-  li {
-    &::after,
-    &::before {
-      display: none;
-    }
-  }
-
   a {
     @include transition-std;
     background: #fff;
     display: block;
     padding: 1.6rem 1.9rem;
     text-align: left;
+    z-index: 300 !important;
 
     &:hover {
       background: #01815e1a;
@@ -200,7 +194,7 @@
 }
 
 .burger-line {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   background: $base-green;

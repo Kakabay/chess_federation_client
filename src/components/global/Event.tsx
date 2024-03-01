@@ -1,13 +1,14 @@
 // Modules
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 // Components
-import EventDate from "./EventDate";
+import EventDate from './EventDate';
 
 // Types
-import { eventProp } from "../../types/eventProps";
+import { eventProp } from '../../types/eventProps';
 
 const Event = ({ id, image, time, date, title }: eventProp) => {
+  console.log(image);
   return (
     <Link to={`/event/${id}`} className="event">
       <div className="event-top">
