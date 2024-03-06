@@ -59,12 +59,14 @@ const MainSlider = () => {
           slideData.map((slide: SlideProps) => {
             return (
               <SwiperSlide key={uuidv4()}>
-                <MainSliderSlide
-                  id={slide.id}
-                  img={slide.img}
-                  txt={slide.txt}
-                  header={slide.header}
-                />
+                {slide.img ? (
+                  <MainSliderSlide
+                    id={slide.id}
+                    img={slide.img}
+                    txt={slide.txt}
+                    header={slide.header}
+                  />
+                ) : null}
               </SwiperSlide>
             );
           })

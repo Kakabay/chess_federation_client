@@ -44,6 +44,8 @@ const Partners = () => {
     500: useMediaQuery("(max-width: 500px)"),
   };
 
+  console.log(partnerData);
+
   return (
     <section className="partners">
       <div className="container">
@@ -70,7 +72,7 @@ const Partners = () => {
                 prevEl: ".slider-prev",
               }}
             >
-              {partnerData[0].id > -1
+              {partnerData.length > 0 && partnerData[0].partner.length > 0
                 ? partnerData.map((image: partnersType) => {
                     return (
                       <SwiperSlide key={uuidv4()}>

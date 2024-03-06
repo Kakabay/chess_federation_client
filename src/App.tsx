@@ -1,30 +1,28 @@
 // Modules
-// add the beginning of your app entry
-import 'vite/modulepreload-polyfill';
-import { useRef } from 'react';
-import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useRef } from "react";
+import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 // Styles
-import './styles/style.scss';
-import 'react-loading-skeleton/dist/skeleton.css';
+import "./styles/style.scss";
+import "react-loading-skeleton/dist/skeleton.css";
 
 // Components
-import Nav from './components/global/Nav';
-import Footer from './components/global/Footer';
-import Burger from './components/global/Burger';
+import Nav from "./components/global/Nav";
+import Footer from "./components/global/Footer";
+import Burger from "./components/global/Burger";
 
 // Pages
-import Main from './pages/Main';
-import Events from './pages/Events';
-import Rating from './pages/Rating';
-import Profile from './pages/Profile';
-import EventItem from './pages/EventItem';
-import Structure from './pages/Structure';
-import Contacts from './pages/Contact';
-import AboutUs from './pages/AboutUs';
-import Tournaments from './pages/Tournaments';
-import PlayerProfile from './pages/PlayerProfile';
+import Main from "./pages/Main";
+import Events from "./pages/Events";
+import Rating from "./pages/Rating";
+import Profile from "./pages/Profile";
+import EventItem from "./pages/EventItem";
+import Structure from "./pages/Structure";
+import Contacts from "./pages/Contact";
+import AboutUs from "./pages/AboutUs";
+import Tournaments from "./pages/Tournaments";
+import PlayerProfile from "./pages/PlayerProfile";
 
 const App = () => {
   // Types

@@ -46,8 +46,6 @@ const EventsSection = () => {
     getMainPosts(setEvents);
   }, []);
 
-  console.log(events, " =======Events section");
-
   return (
     <section className="events">
       <div className="container">

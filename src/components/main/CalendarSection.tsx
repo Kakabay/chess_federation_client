@@ -45,7 +45,7 @@ const CalendarSection = () => {
       <div className="container">
         <div className="calendars">
           <div className="calendars-left">
-            {video.length > 1 ? (
+            {video.length !== 0 ? (
               <ErrorBoundary fallback={<EmptyState />}>
                 <VideoPlayer videoUrl={video} />
               </ErrorBoundary>
@@ -64,7 +64,7 @@ const CalendarSection = () => {
                 slidesPerView={widthBounds ? 2 : 3}
                 loop={false}
               >
-                {videoData[0].id !== -1
+                {videoData[0].id !== -1 && videoData.length > 0
                   ? videoData.map((vid: Video) => {
                       return (
                         <SwiperSlide key={uuidv4()}>
