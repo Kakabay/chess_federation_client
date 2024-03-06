@@ -6,6 +6,8 @@ export default defineConfig({
   // Plugins
   plugins: [react()], // Use the Vite React plugin
 
+  assetsInclude: /\.(png|jpe?g|gif)$/i, // Exclude SVG files
+
   // Other configuration options
   build: {
     // Output directory (adjust as needed)
