@@ -10,13 +10,12 @@
 
 .event-img {
   max-width: 42rem;
-  min-height: 30rem;
+  height: 30rem;
   width: 100%;
-  height: 100%;
   overflow: hidden;
   img {
     width: 100%;
-    height: 100%;
+    height: 30rem;
     object-fit: cover;
   }
 }
