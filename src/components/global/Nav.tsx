@@ -3,7 +3,7 @@ import { useRef, useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
 // Icons
-import mainLogo from '../../icons/main_logo.svg';
+import mainLogo from '../../../public/logo.svg';
 // import { ReactComponent as Arrow } from "../../icons/arrow-down-black.svg";
 import Arrow from '../../icons/arrow-down-black.svg';
 
