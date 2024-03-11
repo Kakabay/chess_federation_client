@@ -96,12 +96,17 @@ export const getEvent = (
     });
 };
 
-export const getVideos = (setVideoData: React.Dispatch<Video[]>, setVideo: playerType[1]) => {
+export const getVideos = (
+  setVideoData: React.Dispatch<Video[]>,
+  setVideo: playerType[1],
+  setActiveVideo: React.Dispatch<number>,
+) => {
   axios
     .get(videos)
     .then((res) => {
       setVideoData(res.data.data);
       setVideo(res.data.data[0].video);
+      setActiveVideo(res.data.data[0].id);
     })
     .catch();
 };

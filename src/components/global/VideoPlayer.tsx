@@ -1,9 +1,9 @@
 // Modules
-import ReactPlayer from "react-player/lazy";
-import { hosting } from "../../links";
+import ReactPlayer from 'react-player/lazy';
+import { hosting } from '../../links';
 
 // Components
-import PlayIcon from "./PlayIcon";
+import PlayIcon from './PlayIcon';
 
 // Types
 interface Props {
@@ -11,6 +11,7 @@ interface Props {
 }
 
 const VideoPlayer = ({ videoUrl }: Props) => {
+  console.log(hosting + videoUrl);
   return (
     <div className="player">
       <ReactPlayer
@@ -18,8 +19,8 @@ const VideoPlayer = ({ videoUrl }: Props) => {
         controls
         playIcon={videoUrl.length > 0 ? <PlayIcon /> : undefined}
         volume={1}
-        height={"100%"}
-        width={"100%"}
+        height={'100%'}
+        width={'100%'}
       />
     </div>
   );
