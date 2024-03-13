@@ -47,8 +47,6 @@ const Rating = () => {
     600: useMediaQuery('(max-width: 600px)'),
   };
 
-  console.log(players);
-
   return (
     <ErrorBoundary fallback={<EmptyState page={true} />}>
       <main className="rating">

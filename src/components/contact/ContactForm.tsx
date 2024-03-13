@@ -84,8 +84,6 @@ const ContactForm = () => {
     getContact(setContact);
   }, []);
 
-  console.log(contact);
-
   return (
     <form
       className="contact-form"

@@ -51,8 +51,6 @@ const Tournaments = () => {
     getEvents(setTournaments);
   }, []);
 
-  console.log(tournaments);
-
   return (
     <ErrorBoundary fallback={<EmptyState page={true} />}>
       <main className="tournaments">

@@ -11,7 +11,6 @@ interface Props {
 }
 
 const VideoPlayer = ({ videoUrl }: Props) => {
-  console.log(hosting + videoUrl);
   return (
     <div className="player">
       <ReactPlayer

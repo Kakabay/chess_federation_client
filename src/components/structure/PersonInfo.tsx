@@ -9,7 +9,6 @@ import phone from '../../icons/phone.svg';
 import fb from '../../icons/facebook-green.svg';
 
 const PersonInfo = ({ img, position, name, email, tel, facebook }: personProps) => {
-  console.log(img);
   return (
     <div className="person">
       <div className="person-left">

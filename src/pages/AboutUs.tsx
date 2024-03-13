@@ -55,8 +55,6 @@ const AboutUs = () => {
     );
   }, []);
 
-  console.log(about, ' About');
-
   const breakpoint = useMediaQuery('(max-width: 500px)');
 
   return (

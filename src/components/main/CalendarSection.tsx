@@ -40,8 +40,6 @@ const CalendarSection = () => {
     getVideos(setVideoData, setVideo, setActiveVideo);
   }, []);
 
-  console.log(activeVideo, 'active vid');
-
   return (
     <section className="calendars-outer">
       <div className="container">

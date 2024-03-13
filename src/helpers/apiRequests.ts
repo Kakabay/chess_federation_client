@@ -198,5 +198,4 @@ export const checkDate = (setState: React.Dispatch<dateEventType>, date: string)
       setState(res.data);
     })
     .catch();
-  console.log(date);
 };

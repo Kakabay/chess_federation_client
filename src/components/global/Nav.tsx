@@ -47,7 +47,6 @@ const Nav = ({ dropdown, setDropdown, burgerOpen, setBurgerOpen, refTrig_1 }: na
                 onClick={() => {
                   // setDropdown((initial) => !initial);
                   setDropDownOpened((initial) => !initial);
-                  console.log(dropDownOpened);
                 }}>
                 <div className="nav-non-link">
                   <span className={dropdown ? 'active' : ''}>О нас</span>
@@ -58,13 +57,7 @@ const Nav = ({ dropdown, setDropdown, burgerOpen, setBurgerOpen, refTrig_1 }: na
                 </div>
                 {dropDownOpened && (
                   <div className={dropDownOpened ? 'nav-dropdown' : 'nav-dropdown disabled'}>
-                    <Link
-                      to={'/about-us'}
-                      onClick={() => {
-                        console.log('Hello');
-                      }}>
-                      О федерации
-                    </Link>
+                    <Link to={'/about-us'}>О федерации</Link>
                     <Link to={'/structure'}>Структура федерации</Link>
                   </div>
                 )}
