@@ -56,7 +56,7 @@ const MainSlider = () => {
           nextEl: '.slider-next',
           prevEl: '.slider-prev',
         }}>
-        {slideData[0].id > -1 ? (
+        {slideData[0].id > -1 && slideData[0].img ? (
           slideData.map((slide: SlideProps) => {
             return (
               <SwiperSlide key={uuidv4()}>
