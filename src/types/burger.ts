@@ -1,5 +1,5 @@
-import React from "react";
-import { dropdown } from "./dropdown";
+import React from 'react';
+import { dropdown } from './dropdown';
 
 export interface burger {
   burgerOpen: boolean;

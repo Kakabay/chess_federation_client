@@ -1,8 +1,11 @@
 // Colors
 $base-green: #01815e;
-$base-black: #1c1717;
+$base-black: #1a1a1a;
 $base-gray: #f8f8f8;
-$hover-green: #0e654e;
+$base-brow: #401d09;
+$stroke-Lbrow: #a6785e;
+$page-bg: #f6f4ec;
+$white: #fff;
 
 // Flex
 @mixin flex-c {
@@ -59,7 +62,7 @@ $hover-green: #0e654e;
   }
 
   &:hover {
-    background: $hover-green;
+    background: $base-green;
     @include transition-std;
   }
 

@@ -1,32 +1,37 @@
 .nav {
   border-bottom: 0.1rem solid $base-green;
   min-height: 12vh;
-  background: #ffffff;
 }
 
 .nav-inner {
-  padding: 0.7rem 0;
-  display: grid;
+  padding: 1rem 0;
+  // display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: 3rem;
-  grid-template-columns: 0.3fr 1fr;
+  // grid-template-columns: 0.3fr 1fr;
 }
 
 .nav-content {
-  display: grid;
-  grid-template-columns: 1fr;
+  // display: grid;
+  // grid-template-columns: 1fr;
+  // align-items: center;
+  display: flex;
   align-items: center;
+  gap: 8rem;
 }
 
 .nav-list {
   display: flex;
   align-items: center;
   justify-self: flex-end;
-  gap: 9.6rem;
+  gap: 3rem;
+
   span,
   a {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     @include transition-std;
-    color: #000;
     &.active {
       color: $base-green;
     }
@@ -35,28 +40,15 @@
   li {
     position: relative;
 
-    &:not(:last-child) {
+    &:last-child {
       &::after {
         position: absolute;
         top: 0;
-        right: -4.8rem;
+        right: -4rem;
         width: 0.1rem;
-        height: 2.5rem;
+        height: 3rem;
         content: '';
         background: $base-green;
-      }
-    }
-
-    &:not(:first-child) {
-      &::before {
-        position: absolute;
-        top: calc(100% + 1rem);
-        right: 0;
-        width: 0;
-        height: 0.1rem;
-        content: '';
-        background: $base-green;
-        @include transition-std;
       }
     }
 
@@ -81,14 +73,29 @@
   }
 }
 
-.nav-logo a {
-  width: 10rem;
-  height: 10rem;
-  display: flex;
+.nav-logo {
+  a {
+    // width: 10rem;
+    // height: 10rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 
-  img {
-    width: 10rem;
-    height: 10rem;
+    span {
+      font-size: 1.8rem;
+      line-height: 22.5px;
+    }
+
+    img {
+      width: 10rem;
+      height: 10rem;
+    }
+
+    &:hover {
+      span {
+        color: $base-black;
+      }
+    }
   }
 }
 
@@ -103,17 +110,58 @@
   * {
     pointer-events: none;
   }
+}
 
-  .arrow {
-    // fill: black;
-    width: 2rem;
-    height: 2rem;
-    @include arrow-start;
+.arrow {
+  // fill: black;
+  width: 2rem;
+  height: 2rem;
+  @include arrow-start;
 
-    &.active {
-      fill: $base-green;
-      @include arrow-end;
-    }
+  &.active {
+    fill: $base-green;
+    @include arrow-end;
+  }
+}
+
+.lang {
+  position: relative;
+}
+
+.lang-content {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+
+  span {
+    font-size: 1.6rem;
+  }
+}
+
+.lang-dropdown {
+  background: $white;
+  z-index: 10;
+  position: absolute;
+  height: fit-content;
+  top: 6rem;
+  right: 50%;
+  pointer-events: all !important;
+  @include transition-std;
+  transform: translateX(50%);
+  box-shadow: 0px 1px 14px 0px #00000040;
+}
+
+.lang-dropdown-content {
+  cursor: pointer;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 1.8rem 2rem;
+
+  span {
+    font-size: 1.6rem;
+    line-height: 19.2px;
   }
 }
 
@@ -151,6 +199,16 @@
       @include transition-std;
     }
   }
+}
+
+.nav-functionality {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.nav-search {
+  cursor: pointer;
 }
 
 .nav-burger {

@@ -50,7 +50,7 @@
       background: $base-green;
 
       &:hover {
-        background: $hover-green;
+        background: $base-green;
         @include transition-std;
       }
     }
@@ -88,7 +88,7 @@
       @include transition-std;
 
       &:hover {
-        background: $hover-green;
+        background: $base-green;
         @include transition-std;
       }
     }
