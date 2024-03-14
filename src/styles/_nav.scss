@@ -43,12 +43,13 @@
     &:last-child {
       &::after {
         position: absolute;
-        top: 0;
+        top: 50%;
+        transform: translateY(-50%);
         right: -4rem;
         width: 0.1rem;
         height: 3rem;
         content: '';
-        background: $base-green;
+        background: $base-brown;
       }
     }
 
@@ -84,6 +85,7 @@
     span {
       font-size: 1.8rem;
       line-height: 22.5px;
+      max-width: 24.2rem;
     }
 
     img {

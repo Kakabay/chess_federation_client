@@ -40,7 +40,7 @@ const Nav = ({ burgerOpen, setBurgerOpen }: NavProps) => {
 
   return (
     <nav className="nav">
-      <div className="container">
+      <div className="nav-container">
         <div className="nav-inner">
           <div className="nav-logo">
             <Link to={'/'}>
