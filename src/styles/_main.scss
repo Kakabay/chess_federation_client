@@ -11,8 +11,9 @@
   position: relative;
   height: 85rem;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-start;
+  padding: 8rem 0;
 }
 
 .swiper-slide-content {
@@ -27,18 +28,21 @@
 .swiper-slider-content-inner {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 4rem;
+  max-width: 100rem;
 
   h3 {
-    color: #fff;
-    font-size: 3rem;
+    color: $white;
+    font-size: 6rem;
     pointer-events: none;
+    line-height: 6.6rem;
   }
 
   p {
     pointer-events: none;
-    color: #fff;
-    font-size: 2.4rem;
+    color: $white;
+    font-size: 2rem;
+    line-height: 3rem;
   }
 
   a {
@@ -119,8 +123,7 @@
 .events-content {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 7rem;
-  row-gap: 3.2rem;
+  column-gap: 4rem;
 }
 
 // Partners

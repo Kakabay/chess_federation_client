@@ -44,16 +44,12 @@ const MainSlider = () => {
   return (
     <section className="main-slider">
       <Swiper
-        modules={[Navigation, Autoplay]}
+        modules={[Autoplay]}
         autoHeight={true}
         spaceBetween={0}
         slidesPerView={1}
         autoplay={{ delay: 6000 }}
-        loop={true}
-        navigation={{
-          nextEl: '.slider-next',
-          prevEl: '.slider-prev',
-        }}>
+        loop={true}>
         {slideData[0].id > -1 && slideData[0].img ? (
           slideData.map((slide: SlideProps) => {
             return (
@@ -84,12 +80,6 @@ const MainSlider = () => {
           />
         )}
       </Swiper>
-      <div className="slider-prev">
-        <img src={arrowPrev} alt="" />
-      </div>
-      <div className="slider-next">
-        <img src={arrowNext} alt="" />
-      </div>
     </section>
   );
 };
