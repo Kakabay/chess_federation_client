@@ -4,11 +4,6 @@ import TurkmenFlag from '../../icons/turkmen-flag.svg';
 import UKFlag from '../../icons/uk-flag.svg';
 import Arrow from '../../icons/arrow-down-black.svg';
 
-interface LangProps {
-  title: string;
-  img: string;
-}
-
 const languages = [
   {
     language: 'Türkmen',
