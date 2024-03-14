@@ -1,18 +1,35 @@
 .event {
+  border-radius: 0.4rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
-  padding-bottom: 1.6rem;
-  border-bottom: 0.1rem solid $base-green;
-  max-width: 42rem;
+  gap: 2rem;
+  border: 0.1rem solid $stroke-Lbrow;
+  width: 100%;
+  height: fit-content;
   overflow: hidden;
 }
 
+.event-title {
+  color: $base-black;
+  font-size: 3rem;
+  line-height: 3.6rem;
+  font-family: 'Bitter';
+  font-weight: 600;
+
+  overflow: hidden;
+  max-height: 10.8rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  white-space: pre-wrap;
+}
+
 .event-img {
-  max-width: 42rem;
   height: 30rem;
   width: 100%;
   overflow: hidden;
+  border-radius: 0.4rem;
   img {
     width: 100%;
     height: 30rem;
@@ -20,17 +37,13 @@
   }
 }
 
-.event-top {
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-
 .event-date {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  color: $gray1;
 }
 
 .event-divider {
@@ -43,13 +56,6 @@
   img {
     width: 0.6rem;
     height: 0.6rem;
-  }
-}
-
-.event-bottom {
-  p {
-    font-size: 1.6rem;
-    font-weight: bold;
   }
 }
 

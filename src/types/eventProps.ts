@@ -1,5 +1,4 @@
 export interface eventTimeProps {
-  time: string;
   date: string;
 }
 
