@@ -1,18 +1,18 @@
 // Modules
-import { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
-import Skeleton from "react-loading-skeleton";
+import { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import Skeleton from 'react-loading-skeleton';
 
 // Components
-import SectionTitle from "../global/SectionTitle";
-import Event from "../global/Event";
+import SectionTitle from '../global/SectionTitle';
+import Event from '../global/Event';
 
 // Helpers
-import { getMainPosts } from "../../helpers/apiRequests";
-import { highlightColor } from "../../helpers/otherVariables";
+import { getMainPosts } from '../../helpers/apiRequests';
+import { highlightColor } from '../../helpers/otherVariables';
 
 // Types
-import { eventType } from "../../types/eventProps";
+import { eventType } from '../../types/eventProps';
 
 const EventsSection = () => {
   // State
@@ -20,15 +20,15 @@ const EventsSection = () => {
     data: [
       {
         id: -1,
-        title: "",
-        published_at: "",
+        title: '',
+        published_at: '',
         featured_images: [
           {
             id: -1,
-            path: "",
+            path: '',
           },
         ],
-        content_html: "",
+        content_html: '',
       },
     ],
     links: {
@@ -53,34 +53,33 @@ const EventsSection = () => {
           <SectionTitle title="События и новости" />
           <div className="events-content">
             {events.loaded && events.data[0].featured_images.length > 0
-              ? events.data.map((evnt) => {
-                  return (
+              ? events.data.map((evnt, index) =>
+                  index <= 2 ? (
                     <Event
                       key={uuidv4()}
                       id={evnt.id}
                       image={evnt.featured_images[0].path}
                       title={evnt.title}
-                      time={"00:00"}
+                      time={'00:00'}
                       date={evnt.published_at}
                     />
-                  );
-                })
-              : ["", "", "", "", "", ""].map(() => (
+                  ) : null,
+                )
+              : ['', '', '', '', '', ''].map(() => (
                   <div
                     key={uuidv4()}
                     style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "1rem",
-                    }}
-                  >
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '1rem',
+                    }}>
                     <Skeleton
                       highlightColor={highlightColor}
-                      height={"30rem"}
-                      style={{ borderRadius: "0.5rem" }}
+                      height={'30rem'}
+                      style={{ borderRadius: '0.5rem' }}
                     />
-                    <Skeleton highlightColor={highlightColor} height={"2rem"} />
-                    <Skeleton highlightColor={highlightColor} height={"4rem"} />
+                    <Skeleton highlightColor={highlightColor} height={'2rem'} />
+                    <Skeleton highlightColor={highlightColor} height={'4rem'} />
                   </div>
                 ))}
           </div>
