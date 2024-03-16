@@ -6,10 +6,6 @@ import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Skeleton from 'react-loading-skeleton';
 
-// Icons
-import arrowPrev from '../../icons/arrow-left-white.svg';
-import arrowNext from '../../icons/arrow-right-white.svg';
-
 // Components
 import MainSliderSlide from './MainSliderSlide';
 
@@ -20,19 +16,23 @@ import { SlideProps } from '../../types/mainSliderSlide';
 import { getMainSliderData } from '../../helpers/apiRequests';
 import { highlightColor } from '../../helpers/otherVariables';
 import useMediaQuery from '../../hooks/useMediaQuery';
-import { Autoplay, Navigation } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 
 const MainSlider = () => {
   // State
-  const [slideData, setSlideData]: [
-    SlideProps[],
-    React.Dispatch<React.SetStateAction<SlideProps[]>>,
-  ] = useState([{ id: -1, header: '', txt: '', img: '' }]);
+  // const [slideData, setSlideData]: [
+  //   SlideProps[],
+  //   React.Dispatch<React.SetStateAction<SlideProps[]>>,
+  // ] = useState([{ id: -1, header: '', txt: '', img: '' }]);
+
+  const [slideData, setSlideData] = useState<SlideProps[]>();
 
   // Effect
   useEffect(() => {
     getMainSliderData(setSlideData);
   }, []);
+
+  console.log(slideData);
 
   const breakpoints: Record<number, boolean> = {
     1100: useMediaQuery('(max-width: 1100px)'),
@@ -45,12 +45,12 @@ const MainSlider = () => {
     <section className="main-slider">
       <Swiper
         modules={[Autoplay]}
-        autoHeight={true}
+        // autoHeight={true}
         spaceBetween={0}
         slidesPerView={1}
         autoplay={{ delay: 6000 }}
         loop={true}>
-        {slideData[0].id > -1 && slideData[0].img ? (
+        {slideData ? (
           slideData.map((slide: SlideProps) => {
             return (
               <SwiperSlide key={uuidv4()}>
