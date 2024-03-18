@@ -7,6 +7,7 @@ import MainSlider from '../components/main/MainSlider';
 import EventsSection from '../components/main/EventsSection';
 import EmptyState from '../components/global/EmptyState';
 import TournamentsSection from '../components/main/TournamentsSection';
+import VideoSection from '../components/main/VideoSection';
 
 const Main = () => {
   useEffect(() => {
@@ -23,6 +24,9 @@ const Main = () => {
         </ErrorBoundary>
         <ErrorBoundary fallback={<EmptyState />}>
           <EventsSection />
+        </ErrorBoundary>
+        <ErrorBoundary fallback={<EmptyState />}>
+          <VideoSection />
         </ErrorBoundary>
 
         {/* <ErrorBoundary fallback={<EmptyState />}>
