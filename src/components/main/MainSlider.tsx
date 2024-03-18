@@ -52,8 +52,17 @@ const MainSlider = () => {
         spaceBetween={0}
         slidesPerView={1}
         autoplay={{ delay: 6000 }}
-        pagination={true}
-        loop={true}>
+        pagination={{
+          el: '.swiper-custom-pagination',
+          type: 'bullets',
+          bulletClass: 'swiper-custom-bullet',
+          bulletActiveClass: 'swiper-custom-bullet-active',
+          clickable: true,
+        }}
+        loop={true}
+        className="swiper-custom">
+        <div className="swiper-custom-pagination" />
+
         {slideData ? (
           slideData.map((slide: SlideProps) => {
             return (

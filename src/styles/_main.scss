@@ -1,12 +1,12 @@
 .main-slider {
   padding-bottom: 8rem;
-  height: fit-content;
   position: relative;
 }
 
-.swiper {
-  height: fit-content;
+.swiper-custom {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .swiper-slide-inner {
@@ -24,7 +24,7 @@
 }
 
 .swiper-slide {
-  height: fit-content;
+  // height: fit-content;
 }
 
 .swiper-slider-content-inner {
@@ -114,23 +114,36 @@
   right: 2rem;
 }
 
-.swiper-pagination {
-  // display: flex;
+.swiper-custom-pagination {
+  position: absolute;
+  max-width: 140rem;
+  margin: 0 auto;
+  gap: 1rem;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  padding: 4rem;
+  // padding-right: 10%;
+  bottom: 4rem;
+  right: 0;
+  // bottom: 40px !important;
+  // right: 40px !important;
+  z-index: 1000;
+}
 
-  .swiper-pagination-bullet {
-    height: 1.2rem;
-    width: 1.2rem;
-    background: transparent;
-    border: 1px solid $white;
-    border-radius: 100%;
-    opacity: 1;
-    transition: all 0.3s ease;
-    // display: block;
+.swiper-custom-bullet {
+  display: block;
+  height: 1.2rem;
+  width: 1.2rem;
+  // background: #fff !important;
+  border: 1px solid $white;
+  border-radius: 100%;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
 
-    &-active {
-      background: $white;
-    }
-  }
+.swiper-custom-bullet.swiper-custom-bullet-active {
+  background: $white;
 }
 
 // Events
