@@ -3,6 +3,7 @@ import RussianFlag from '../../icons/russian-flag.svg';
 import TurkmenFlag from '../../icons/turkmen-flag.svg';
 import UKFlag from '../../icons/uk-flag.svg';
 import Arrow from '../../icons/arrow-down-black.svg';
+import { v4 } from 'uuid';
 
 const languages = [
   {
@@ -42,9 +43,12 @@ const Lang = () => {
 
   return (
     <div className="lang" ref={langdownRef}>
-      {languages.map((lang) =>
+      {languages.map((lang, i) =>
         lang.language === activeLang ? (
-          <div className="lang-content" onClick={() => setLangOpened((initial) => !initial)}>
+          <div
+            className="lang-content"
+            key={i}
+            onClick={() => setLangOpened((initial) => !initial)}>
             <div>
               <img src={lang.flag} alt="flag" />
             </div>
@@ -63,6 +67,7 @@ const Lang = () => {
             lang.language !== activeLang ? (
               <div
                 className="lang-dropdown-content"
+                key={v4()}
                 onClick={() => {
                   setActiveLang(lang.language);
                   setLangOpened((initial) => !initial);

@@ -48,7 +48,7 @@ const Partners = () => {
     <section className="partners">
       <div className="container">
         <div className="partners-inner">
-          <SectionTitle title={'Партнеры'} />
+          <SectionTitle title={'Партнеры'} icon="bishop" />
           <div className="partners-content">
             <Swiper
               modules={[Navigation, Autoplay, FreeMode]}

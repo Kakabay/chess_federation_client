@@ -2,6 +2,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 // import { Navigation, Autoplay } from "swiper";
 import 'swiper/css';
+import 'swiper/css/pagination';
+
 import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import Skeleton from 'react-loading-skeleton';
@@ -17,6 +19,7 @@ import { getMainSliderData } from '../../helpers/apiRequests';
 import { highlightColor } from '../../helpers/otherVariables';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import { Autoplay } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 
 const MainSlider = () => {
   // State
@@ -44,11 +47,12 @@ const MainSlider = () => {
   return (
     <section className="main-slider">
       <Swiper
-        modules={[Autoplay]}
+        modules={[Autoplay, Pagination]}
         // autoHeight={true}
         spaceBetween={0}
         slidesPerView={1}
         autoplay={{ delay: 6000 }}
+        pagination={true}
         loop={true}>
         {slideData ? (
           slideData.map((slide: SlideProps) => {

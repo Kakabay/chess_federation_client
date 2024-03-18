@@ -1,14 +1,14 @@
 // Modules
-import { useEffect } from "react";
-import { ErrorBoundary } from "react-error-boundary";
+import { useEffect } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
 
 // Components
-import MainSlider from "../components/main/MainSlider";
-import EventsSection from "../components/main/EventsSection";
-import PlayerRating from "../components/main/PlayerRatingSection";
-import Partners from "../components/main/PartnersSection";
-import CalendarSection from "../components/main/CalendarSection";
-import EmptyState from "../components/global/EmptyState";
+import MainSlider from '../components/main/MainSlider';
+import EventsSection from '../components/main/EventsSection';
+import PlayerRating from '../components/main/PlayerRatingSection';
+import Partners from '../components/main/PartnersSection';
+import CalendarSection from '../components/main/CalendarSection';
+import EmptyState from '../components/global/EmptyState';
 
 const Main = () => {
   useEffect(() => {
@@ -23,9 +23,7 @@ const Main = () => {
         <ErrorBoundary fallback={<EmptyState />}>
           <EventsSection />
         </ErrorBoundary>
-        <ErrorBoundary fallback={<EmptyState />}>
-          <CalendarSection />
-        </ErrorBoundary>
+        <ErrorBoundary fallback={<EmptyState />}>{/* <CalendarSection /> */}</ErrorBoundary>
 
         {/* Not wrapping PlayerRating since it is not a component that may break */}
         <PlayerRating />

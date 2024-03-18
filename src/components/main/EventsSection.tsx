@@ -50,7 +50,7 @@ const EventsSection = () => {
     <section className="events">
       <div className="container">
         <div className="events-inner">
-          <SectionTitle title="События и новости" />
+          <SectionTitle title="События и новости" icon="rook" linkName="все события" link="/news" />
           <div className="events-content">
             {events.loaded && events.data[0].featured_images.length > 0
               ? events.data.map((evnt, index) =>

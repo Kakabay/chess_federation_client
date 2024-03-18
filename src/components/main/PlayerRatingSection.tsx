@@ -1,17 +1,17 @@
 // Modules
-import { ErrorBoundary } from "react-error-boundary";
+import { ErrorBoundary } from 'react-error-boundary';
 
 // Components
-import SectionTitle from "../global/SectionTitle";
-import SearchTable from "../global/SearchTable";
-import EmptyState from "../global/EmptyState";
+import SectionTitle from '../global/SectionTitle';
+import SearchTable from '../global/SearchTable';
+import EmptyState from '../global/EmptyState';
 
 const PlayerRating = () => {
   return (
     <section className="rating">
       <div className="container">
         <div className="rating-inner">
-          <SectionTitle title={"Рейтинг игроков"} />
+          <SectionTitle title={'Рейтинг игроков'} icon="king" />
           <div className="rating-content">
             <ErrorBoundary fallback={<EmptyState />}>
               <SearchTable />
