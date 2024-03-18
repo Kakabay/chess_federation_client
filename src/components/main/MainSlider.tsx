@@ -23,10 +23,6 @@ import { Pagination } from 'swiper/modules';
 
 const MainSlider = () => {
   // State
-  // const [slideData, setSlideData]: [
-  //   SlideProps[],
-  //   React.Dispatch<React.SetStateAction<SlideProps[]>>,
-  // ] = useState([{ id: -1, header: '', txt: '', img: '' }]);
 
   const [slideData, setSlideData] = useState<SlideProps[]>();
 

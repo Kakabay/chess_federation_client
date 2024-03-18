@@ -1,17 +1,17 @@
 // Modules
-import { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
-import Skeleton from "react-loading-skeleton";
+import { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import Skeleton from 'react-loading-skeleton';
 
 // Components
-import Event from "../global/Event";
+import Event from '../global/Event';
 
 // Helpers
-import { getAsidePosts } from "../../helpers/apiRequests";
-import { highlightColor } from "../../helpers/otherVariables";
+import { getAsidePosts } from '../../helpers/apiRequests';
+import { highlightColor } from '../../helpers/otherVariables';
 
 // Types
-import { eventType } from "../../types/eventProps";
+import { eventType } from '../../types/eventProps';
 
 const EventAside = () => {
   // State
@@ -19,15 +19,15 @@ const EventAside = () => {
     data: [
       {
         id: -1,
-        title: "",
-        published_at: "",
+        title: '',
+        published_at: '',
         featured_images: [
           {
             id: -1,
-            path: "",
+            path: '',
           },
         ],
-        content_html: "",
+        content_html: '',
       },
     ],
     links: {
@@ -56,27 +56,26 @@ const EventAside = () => {
                   id={evnt.id}
                   image={evnt.featured_images[0].path}
                   title={evnt.title}
-                  time={"00:00"}
+                  time={'00:00'}
                   date={evnt.published_at}
                 />
               );
             })
-          : ["", "", "", ""].map(() => (
+          : ['', '', '', ''].map(() => (
               <div
                 key={uuidv4()}
                 style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "1rem",
-                }}
-              >
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '1rem',
+                }}>
                 <Skeleton
                   highlightColor={highlightColor}
-                  height={"30rem"}
-                  style={{ borderRadius: "0.5rem" }}
+                  height={'30rem'}
+                  style={{ borderRadius: '0.5rem' }}
                 />
-                <Skeleton highlightColor={highlightColor} height={"2rem"} />
-                <Skeleton highlightColor={highlightColor} height={"4rem"} />
+                <Skeleton highlightColor={highlightColor} height={'2rem'} />
+                <Skeleton highlightColor={highlightColor} height={'4rem'} />
               </div>
             ))}
       </div>
