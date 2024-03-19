@@ -23,7 +23,7 @@ const TournamentItem = ({
         <div className="tournament-item-date-divider"></div>
         <h4 className="tournament-item-date-item">
           <span>{dateParser(startTime, false)[0]}</span>
-          {dateParser(startTime, false)[1]}
+          {dateParser(endTime, false)[1]}
         </h4>
       </div>
       <div className="tournament-item-content">

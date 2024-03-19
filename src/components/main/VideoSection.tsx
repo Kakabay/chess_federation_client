@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { getVideos } from "../../helpers/apiRequests";
-import useMediaQuery from "../../hooks/useMediaQuery";
-import { playerType } from "../../types/players";
+// import useMediaQuery from "../../hooks/useMediaQuery";
+// import { playerType } from "../../types/players";
 import { Video } from "../../types/video";
 import { ErrorBoundary } from "react-error-boundary";
 import Skeleton from "react-loading-skeleton";
@@ -22,7 +22,7 @@ const VideoSection = () => {
       },
     ]);
 
-  const widthBounds: boolean = useMediaQuery("(max-width: 750px)");
+  // const widthBounds: boolean = useMediaQuery("(max-width: 750px)");
 
   useEffect(() => {
     getVideos(setVideoData, setActiveVideoUrl);

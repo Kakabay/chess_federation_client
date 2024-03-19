@@ -25,10 +25,10 @@ import {
 // Types
 import { ContactData, Contact } from "../types/contact";
 import { Video } from "../types/video";
-import { PlayersData, playerType } from "../types/players";
+import { PlayersData } from "../types/players";
 import { About } from "../types/about";
 import { structureType } from "../types/structure";
-import { tournamentType } from "../types/events";
+// import { tournamentType } from "../types/events";
 import { dateEventType } from "../components/global/CalendarCell";
 import { Tournaments } from "../types/tournaments";
 

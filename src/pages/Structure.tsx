@@ -52,7 +52,7 @@ const Structure = () => {
       <main className="structure">
         <div className="container">
           <div className="structure-inner">
-            <SectionTitle title={"Структура федерации"} />
+            <SectionTitle title={"Структура федерации"} icon="bishop" />
             {structureData[0].id !== -1 ? (
               <div className="structure-content">
                 {structureData.map((person: structureType) => {

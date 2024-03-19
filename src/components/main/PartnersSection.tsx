@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SectionTitle from "../global/SectionTitle";
 import { getPartnerSliderData } from "../../helpers/apiRequests";
 import { partnersType } from "../../types/partnersType";

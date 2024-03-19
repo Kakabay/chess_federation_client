@@ -6,7 +6,7 @@ import { ErrorBoundary } from "react-error-boundary";
 
 // Components
 import EventAside from "../components/event_item/EventAside";
-import EventDate from "../components/global/EventDate";
+// import EventDate from "../components/global/EventDate";
 import EmptyState from "../components/global/EmptyState";
 
 // Helpers
@@ -53,7 +53,7 @@ const EventItem = () => {
             <div className="eventitem-content">
               {eventData.id !== -1 && !loader ? (
                 <div className="eventitem-top">
-                  <EventDate time={"00:00"} date={eventData.published_at} />
+                  {/* <EventDate time={"00:00"} date={eventData.published_at} /> */}
                   <h2>{eventData.title}</h2>
                 </div>
               ) : (
