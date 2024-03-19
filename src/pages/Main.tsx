@@ -1,13 +1,14 @@
 // Modules
-import { useEffect } from 'react';
-import { ErrorBoundary } from 'react-error-boundary';
+import { useEffect } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 
 // Components
-import MainSlider from '../components/main/MainSlider';
-import EventsSection from '../components/main/EventsSection';
-import EmptyState from '../components/global/EmptyState';
-import TournamentsSection from '../components/main/TournamentsSection';
-import VideoSection from '../components/main/VideoSection';
+import MainSlider from "../components/main/MainSlider";
+import EventsSection from "../components/main/EventsSection";
+import EmptyState from "../components/global/EmptyState";
+import TournamentsSection from "../components/main/TournamentsSection";
+import VideoSection from "../components/main/VideoSection";
+import RatingSection from "../components/main/RatingSection";
 
 const Main = () => {
   useEffect(() => {
@@ -27,6 +28,9 @@ const Main = () => {
         </ErrorBoundary>
         <ErrorBoundary fallback={<EmptyState />}>
           <VideoSection />
+        </ErrorBoundary>
+        <ErrorBoundary fallback={<EmptyState />}>
+          <RatingSection />
         </ErrorBoundary>
 
         {/* <ErrorBoundary fallback={<EmptyState />}>
