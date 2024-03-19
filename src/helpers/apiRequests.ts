@@ -30,6 +30,7 @@ import { About } from "../types/about";
 import { structureType } from "../types/structure";
 import { tournamentType } from "../types/events";
 import { dateEventType } from "../components/global/CalendarCell";
+import { Tournaments } from "../types/tournaments";
 
 export const getMainSliderData = (
   setState: React.Dispatch<SlideProps[]>
@@ -149,11 +150,11 @@ export const getTeam = (setState: React.Dispatch<PlayersData[]>) => {
     .catch();
 };
 
-export const getEvents = (setState: React.Dispatch<tournamentType[]>) => {
+export const getEvents = (setState: React.Dispatch<Tournaments>) => {
   axios
     .get(events)
     .then((res) => {
-      setState(res.data.data);
+      setState(res.data);
     })
     .catch();
 };

@@ -9,6 +9,7 @@ import EmptyState from "../components/global/EmptyState";
 import TournamentsSection from "../components/main/TournamentsSection";
 import VideoSection from "../components/main/VideoSection";
 import RatingSection from "../components/main/RatingSection";
+import PartnersSection from "../components/main/PartnersSection";
 
 const Main = () => {
   useEffect(() => {
@@ -31,6 +32,9 @@ const Main = () => {
         </ErrorBoundary>
         <ErrorBoundary fallback={<EmptyState />}>
           <RatingSection />
+        </ErrorBoundary>
+        <ErrorBoundary fallback={<EmptyState />}>
+          <PartnersSection />
         </ErrorBoundary>
 
         {/* <ErrorBoundary fallback={<EmptyState />}>

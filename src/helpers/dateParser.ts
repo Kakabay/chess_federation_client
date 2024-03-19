@@ -31,10 +31,12 @@ export const dateParser = (input: string, includeYear?: boolean) => {
     parsedMonth = ["Dec", "Дек"];
   }
 
+  const date = [day[0], parsedMonth[1]];
+
   if (includeYear) {
     return `${day} ${parsedMonth[1]} ${year}`;
   } else {
-    return `${day} ${parsedMonth[1]}`;
+    return date;
   }
 };
 

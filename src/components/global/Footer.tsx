@@ -6,6 +6,7 @@ import vk from "../../icons/vk.svg";
 import instagram from "../../icons/instagram.svg";
 import facebook from "../../icons/facebook.svg";
 import { navLinks } from "../../data/data";
+import { v4 } from "uuid";
 
 const Footer = () => {
   return (
@@ -14,7 +15,7 @@ const Footer = () => {
         <div className="footer-inner">
           <nav className="footer-nav">
             {navLinks.map((link) => (
-              <Link to={link.path} className="footer-nav-link">
+              <Link to={link.path} key={v4()} className="footer-nav-link">
                 {link.title}
               </Link>
             ))}

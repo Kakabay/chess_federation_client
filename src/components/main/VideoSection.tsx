@@ -9,6 +9,7 @@ import { highlightColor } from "../../helpers/otherVariables";
 import EmptyState from "../global/EmptyState";
 import VideoPlayer from "../global/VideoPlayer";
 import { hosting } from "../../links";
+import { v4 } from "uuid";
 
 const VideoSection = () => {
   const [activeVideoUrl, setActiveVideoUrl] = useState<string>();
@@ -37,6 +38,7 @@ const VideoSection = () => {
               {videoData.map((video) =>
                 video.video === activeVideoUrl ? (
                   <VideoPlayer
+                    key={v4()}
                     videoUrl={activeVideoUrl}
                     poster={video.poster}
                   />
@@ -54,6 +56,7 @@ const VideoSection = () => {
             {videoData.map((video) =>
               activeVideoUrl !== video.video ? (
                 <div
+                  key={v4()}
                   className="videos-item"
                   onClick={() => setActiveVideoUrl(video.video)}
                 >

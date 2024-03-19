@@ -4,6 +4,7 @@ import king from "../../images/king-ing.png";
 import queen from "../../images/queen-img.png";
 import globe from "../../images/globe-img.png";
 import { Link } from "react-router-dom";
+import { v4 } from "uuid";
 
 const cardsData = [
   {
@@ -32,7 +33,7 @@ const RatingSection = () => {
 
           <div className="rating-cards-block">
             {cardsData.map((card) => (
-              <Link to={card.link} className="rating-card">
+              <Link to={card.link} key={v4()} className="rating-card">
                 <div className="rating-card-img">
                   <img src={card.img} alt={card.cardTitle} />
                 </div>
