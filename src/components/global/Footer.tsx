@@ -5,25 +5,7 @@ import { Link } from "react-router-dom";
 import vk from "../../icons/vk.svg";
 import instagram from "../../icons/instagram.svg";
 import facebook from "../../icons/facebook.svg";
-
-const footerLinks = [
-  {
-    title: "О нас",
-    path: "/about-us",
-  },
-  {
-    title: "Новости",
-    path: "/about-us",
-  },
-  {
-    title: "Прошедшие события",
-    path: "/about-us",
-  },
-  {
-    title: "Контакты",
-    path: "/about-us",
-  },
-];
+import { navLinks } from "../../data/data";
 
 const Footer = () => {
   return (
@@ -31,7 +13,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-inner">
           <nav className="footer-nav">
-            {footerLinks.map((link) => (
+            {navLinks.map((link) => (
               <Link to={link.path} className="footer-nav-link">
                 {link.title}
               </Link>

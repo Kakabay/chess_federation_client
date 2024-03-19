@@ -1,8 +1,8 @@
-import axios from 'axios';
-import React from 'react';
-import { SlideProps } from '../types/mainSliderSlide';
-import { partnersType } from '../types/partnersType';
-import { eventType } from '../types/eventProps';
+import axios from "axios";
+import React from "react";
+import { SlideProps } from "../types/mainSliderSlide";
+import { partnersType } from "../types/partnersType";
+import { eventType } from "../types/eventProps";
 
 // Links
 import {
@@ -20,18 +20,20 @@ import {
   players,
   events,
   contact_us,
-} from '../links';
+} from "../links";
 
 // Types
-import { ContactData, Contact } from '../types/contact';
-import { Video } from '../types/video';
-import { PlayersData, playerType } from '../types/players';
-import { About } from '../types/about';
-import { structureType } from '../types/structure';
-import { tournamentType } from '../types/events';
-import { dateEventType } from '../components/global/CalendarCell';
+import { ContactData, Contact } from "../types/contact";
+import { Video } from "../types/video";
+import { PlayersData, playerType } from "../types/players";
+import { About } from "../types/about";
+import { structureType } from "../types/structure";
+import { tournamentType } from "../types/events";
+import { dateEventType } from "../components/global/CalendarCell";
 
-export const getMainSliderData = (setState: React.Dispatch<SlideProps[]>): void => {
+export const getMainSliderData = (
+  setState: React.Dispatch<SlideProps[]>
+): void => {
   axios
     .get(sliderDataUrl)
     .then((res) => {
@@ -40,7 +42,9 @@ export const getMainSliderData = (setState: React.Dispatch<SlideProps[]>): void 
     .catch(() => {});
 };
 
-export const getPartnerSliderData = (setState: React.Dispatch<partnersType[]>): void => {
+export const getPartnerSliderData = (
+  setState: React.Dispatch<partnersType[]>
+): void => {
   axios
     .get(partners)
     .then((res) => {
@@ -79,7 +83,7 @@ export const getAsidePosts = (setState: eventType[1]): void => {
 export const getEvent = (
   id: string | undefined,
   setState: eventType[1],
-  setLoader: React.Dispatch<boolean>,
+  setLoader: React.Dispatch<boolean>
 ): void => {
   axios
     .get(`${post}/${id}?locale=ru`)
@@ -98,15 +102,13 @@ export const getEvent = (
 
 export const getVideos = (
   setVideoData: React.Dispatch<Video[]>,
-  setVideo: playerType[1],
-  setActiveVideo: React.Dispatch<number>,
+  setActiveVideoUrl: React.Dispatch<string>
 ) => {
   axios
     .get(videos)
     .then((res) => {
       setVideoData(res.data.data);
-      setVideo(res.data.data[0].video);
-      setActiveVideo(res.data.data[0].id);
+      setActiveVideoUrl(res.data.data[0].video);
     })
     .catch();
 };
@@ -156,7 +158,10 @@ export const getEvents = (setState: React.Dispatch<tournamentType[]>) => {
     .catch();
 };
 
-export const getPlayerInfo = (setState: React.Dispatch<PlayersData>, link: string) => {
+export const getPlayerInfo = (
+  setState: React.Dispatch<PlayersData>,
+  link: string
+) => {
   axios
     .get(link)
     .then((res) => {
@@ -169,16 +174,16 @@ export const sendData = (
   setLoad: React.Dispatch<boolean>,
   setStatus: React.Dispatch<boolean>,
   setTriggered: React.Dispatch<boolean>,
-  data: ContactData,
+  data: ContactData
 ) => {
   const formData = new FormData();
-  formData.append('name', data.name);
-  formData.append('email', data.email);
-  formData.append('message', data.message);
+  formData.append("name", data.name);
+  formData.append("email", data.email);
+  formData.append("message", data.message);
   axios
     .post(contact_us, formData)
     .then((res) => {
-      if (res.data === 'Contact message sent') {
+      if (res.data === "Contact message sent") {
         setStatus(true);
       }
     })
@@ -191,7 +196,10 @@ export const sendData = (
     });
 };
 
-export const checkDate = (setState: React.Dispatch<dateEventType>, date: string) => {
+export const checkDate = (
+  setState: React.Dispatch<dateEventType>,
+  date: string
+) => {
   axios
     .post(`${getDate}?date=${date}`)
     .then((res) => {

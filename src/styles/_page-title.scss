@@ -1,0 +1,11 @@
+.page-title {
+  line-height: 110%;
+  font-size: 6rem;
+  font-family: "Bitter";
+  font-weight: 600;
+  color: $base-brown;
+
+  &.big {
+    font-size: 10.9rem;
+  }
+}

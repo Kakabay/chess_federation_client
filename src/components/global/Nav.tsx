@@ -1,14 +1,14 @@
 // Modules
-import { useRef, useEffect, useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useRef, useEffect, useState } from "react";
+import { useLocation, Link } from "react-router-dom";
 
 // Icons
-import mainLogo from '../../../public/logo.svg';
+import mainLogo from "../../../public/logo.svg";
 // import { ReactComponent as Arrow } from "../../icons/arrow-down-black.svg";
-import Arrow from '../../icons/arrow-down-black.svg';
+import Arrow from "../../icons/arrow-down-black.svg";
 
-import Search from '../../icons/search.svg';
-import Lang from './Lang';
+import Search from "../../icons/search.svg";
+import Lang from "./Lang";
 
 // Types
 interface NavProps {
@@ -26,15 +26,18 @@ const Nav = ({ burgerOpen, setBurgerOpen }: NavProps) => {
   // Click outside dropdown close function
   useEffect(() => {
     const handleDropDownClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
         setDropDownOpened(false);
       }
     };
 
-    document.addEventListener('click', handleDropDownClickOutside);
+    document.addEventListener("click", handleDropDownClickOutside);
 
     return () => {
-      document.addEventListener('click', handleDropDownClickOutside);
+      document.addEventListener("click", handleDropDownClickOutside);
     };
   }, []);
 
@@ -43,7 +46,7 @@ const Nav = ({ burgerOpen, setBurgerOpen }: NavProps) => {
       <div className="nav-container">
         <div className="nav-inner">
           <div className="nav-logo">
-            <Link to={'/'}>
+            <Link to={"/"}>
               <img src={mainLogo} alt="" />
               <span>Шахматная федерация Туркменистана</span>
             </Link>
@@ -55,31 +58,44 @@ const Nav = ({ burgerOpen, setBurgerOpen }: NavProps) => {
                 className=""
                 onClick={() => {
                   setDropDownOpened((initial) => !initial);
-                }}>
+                }}
+              >
                 <div className="nav-non-link">
-                  <span className={dropDownOpened ? 'active' : ''}>О нас</span>
-                  <div className={dropDownOpened ? 'arrow active' : 'arrow'}>
+                  <span className={dropDownOpened ? "active" : ""}>О нас</span>
+                  <div className={dropDownOpened ? "arrow active" : "arrow"}>
                     <img src={Arrow} alt="arr icon" />
                   </div>
                 </div>
                 {dropDownOpened && (
-                  <div className={dropDownOpened ? 'nav-dropdown' : 'nav-dropdown disabled'}>
-                    <Link to={'/about-us'}>О федерации</Link>
-                    <Link to={'/structure'}>Структура федерации</Link>
+                  <div
+                    className={
+                      dropDownOpened ? "nav-dropdown" : "nav-dropdown disabled"
+                    }
+                  >
+                    <Link to={"/about-us"}>О федерации</Link>
+                    <Link to={"/structure"}>Структура федерации</Link>
                   </div>
                 )}
               </li>
-              <li className={location.pathname.includes('news') ? 'active' : ''}>
-                <Link to={'/news'}>Новости и события</Link>
+              <li
+                className={location.pathname.includes("news") ? "active" : ""}
+              >
+                <Link to={"/news"}>Новости</Link>
               </li>
-              <li className={location.pathname.includes('tournaments') ? 'active' : ''}>
-                <Link to={'/tournaments'}>Турниры</Link>
+              <li
+                className={
+                  location.pathname.includes("tournaments") ? "active" : ""
+                }
+              >
+                <Link to={"/tournaments"}>Предстоящие события</Link>
               </li>
-              <li className={location.pathname.includes('rating') ? 'active' : ''}>
-                <Link to={'/rating'}>Рейтинг</Link>
-              </li>
-              <li className={location.pathname.includes('contact') ? 'active' : ''}>
-                <Link to={'/contact'}>Контакты</Link>
+
+              <li
+                className={
+                  location.pathname.includes("contact") ? "active" : ""
+                }
+              >
+                <Link to={"/contact"}>Контакты</Link>
               </li>
             </ul>
 
@@ -94,10 +110,11 @@ const Nav = ({ burgerOpen, setBurgerOpen }: NavProps) => {
             </div>
 
             <div
-              className={burgerOpen ? 'nav-burger active' : 'nav-burger'}
+              className={burgerOpen ? "nav-burger active" : "nav-burger"}
               onClick={() => {
                 setBurgerOpen((initial) => !initial);
-              }}>
+              }}
+            >
               <span className="burger-line burger-line-top"></span>
               <span className="burger-line burger-line-mid"></span>
               <span className="burger-line burger-line-bot"></span>
