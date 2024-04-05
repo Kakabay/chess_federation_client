@@ -1,23 +1,24 @@
 // Modules
 // import { useRef } from "react";
-import { Routes, Route } from "react-router-dom";
-import { useState } from "react";
+import { Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 
 // Styles
-import "./styles/style.scss";
-import "react-loading-skeleton/dist/skeleton.css";
+import './styles/style.scss';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 // Components
-import Nav from "./components/global/Nav";
-import Footer from "./components/global/Footer";
+import Nav from './components/global/Nav';
+import Footer from './components/global/Footer';
 // import Burger from "./components/global/Burger";
 
 // Pages
-import Main from "./pages/Main";
-import Events from "./pages/Events";
-import Rating from "./pages/Rating";
-import Profile from "./pages/Profile";
-import EventItem from "./pages/EventItem";
+import Main from './pages/Main';
+import Events from './pages/Events';
+import Rating from './pages/Rating';
+import Profile from './pages/Profile';
+import EventItem from './pages/EventItem';
+import Tournaments from './pages/Tournaments';
 // import Structure from './pages/Structure';
 // import Contacts from './pages/Contact';
 // import AboutUs from './pages/AboutUs';
@@ -55,6 +56,7 @@ const App = () => {
           <Route path="/news" element={<Events />} />
           <Route path="/rating" element={<Rating />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/tournaments" element={<Tournaments />} />
           <Route path="/event/:eventId" element={<EventItem />} />
           {/* <Route path="/structure" element={<Structure />} />
           <Route path="/contact" element={<Contacts />} />

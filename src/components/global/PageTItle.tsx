@@ -1,13 +1,15 @@
 interface SectionTItleProps {
-  type: "big" | "normal";
+  type: 'big' | 'normal';
   title: string;
+  descripter?: string;
 }
 
-const PageTItle = ({ type = "normal", title }: SectionTItleProps) => {
+const PageTItle = ({ type = 'normal', title, descripter }: SectionTItleProps) => {
   return (
-    <h1 className={`page-title ${type === "big" ? "big" : "normal"}`}>
-      {title}
-    </h1>
+    <div className={`page-title-wrapper ${descripter ? 'center' : ''}`}>
+      <h1 className={`page-title ${type === 'big' ? 'big' : 'normal'}`}>{title}</h1>
+      {descripter && <p>{descripter}</p>}
+    </div>
   );
 };
 

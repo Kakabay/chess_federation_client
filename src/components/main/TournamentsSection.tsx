@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { getEvents } from "../../helpers/apiRequests";
-import SectionTitle from "../global/SectionTitle";
-import TournamentItem from "../global/TournamentItem";
-import { Tournaments } from "../../types/tournaments";
-import { v4 } from "uuid";
+import { useEffect, useState } from 'react';
+import { getEvents } from '../../helpers/apiRequests';
+import SectionTitle from '../global/SectionTitle';
+import { Tournaments } from '../../types/tournaments';
+import { v4 } from 'uuid';
+import TournamentItem from '../tournaments/TournamentItem';
 
 const TournamentsSection = () => {
   const [tourData, setTourData] = useState<Tournaments>();

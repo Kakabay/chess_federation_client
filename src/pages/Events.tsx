@@ -20,6 +20,7 @@ import { eventType } from '../types/eventProps';
 import { getAllPosts } from '../helpers/apiRequests';
 import { highlightColor } from '../helpers/otherVariables';
 import useMediaQuery from '../hooks/useMediaQuery';
+import PageTItle from '../components/global/PageTItle';
 
 const Events = () => {
   // State
@@ -61,7 +62,7 @@ const Events = () => {
       <main className="events-page">
         <div className="container">
           <div className="event-page-wrapper">
-            <SectionTitle title={'События и новости'} icon="bishop" />
+            <PageTItle title={'Новости'} type="normal" />
             <div className="events-page-inner">
               {events.loaded && events.data[0].featured_images.length > 0
                 ? events.data.map((evnt) => {

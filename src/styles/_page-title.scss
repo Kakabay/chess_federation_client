@@ -1,11 +1,28 @@
+.page-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: $base-brown;
+
+  &.center {
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
+    font-size: 1.6rem;
+    line-height: 100%;
+  }
+}
+
 .page-title {
   line-height: 110%;
   font-size: 6rem;
-  font-family: "Bitter";
-  font-weight: 600;
-  color: $base-brown;
+  font-family: 'Bitter';
+  font-weight: 700;
 
   &.big {
     font-size: 10.9rem;
+    text-transform: uppercase;
   }
 }

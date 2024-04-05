@@ -1,4 +1,4 @@
-import { dateParser } from "../../helpers/dateParser";
+import { dateParser } from '../../helpers/dateParser';
 
 interface TournamentItemProps {
   startTime: string;
@@ -7,12 +7,7 @@ interface TournamentItemProps {
   tourName: string;
 }
 
-const TournamentItem = ({
-  startTime,
-  endTime,
-  place,
-  tourName,
-}: TournamentItemProps) => {
+const TournamentItem = ({ startTime, endTime, place, tourName }: TournamentItemProps) => {
   return (
     <div className="tournament-item">
       <div className="tournament-item-date">
