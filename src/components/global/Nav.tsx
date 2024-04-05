@@ -51,12 +51,14 @@ const Nav = ({ burgerOpen, setBurgerOpen }: NavProps) => {
           <div className="nav-content">
             <ul className="nav-list">
               <li
-                ref={dropdownRef}
-                className=""
-                onClick={() => {
-                  setDropDownOpened((initial) => !initial);
-                }}>
-                <div className="nav-non-link">
+                className={location.pathname.includes('about-us') ? 'active' : ''}
+                // ref={dropdownRef}
+                // className=""
+                // onClick={() => {
+                //   setDropDownOpened((initial) => !initial);
+                // }}
+              >
+                {/* <div className="nav-non-link">
                   <span className={dropDownOpened ? 'active' : ''}>О нас</span>
                   <div className={dropDownOpened ? 'arrow active' : 'arrow'}>
                     <img src={Arrow} alt="arr icon" />
@@ -64,10 +66,11 @@ const Nav = ({ burgerOpen, setBurgerOpen }: NavProps) => {
                 </div>
                 {dropDownOpened && (
                   <div className={dropDownOpened ? 'nav-dropdown' : 'nav-dropdown disabled'}>
-                    <Link to={'/about-us'}>О федерации</Link>
+                   
                     <Link to={'/structure'}>Структура федерации</Link>
                   </div>
-                )}
+                )} */}
+                <Link to={'/about-us'}>О федерации</Link>
               </li>
               <li className={location.pathname.includes('news') ? 'active' : ''}>
                 <Link to={'/news'}>Новости</Link>
