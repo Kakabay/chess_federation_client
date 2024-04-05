@@ -1,11 +1,11 @@
 .nav {
-  border-bottom: 0.1rem solid $base-green;
+  border-bottom: 0.1rem solid $stroke-Lbrow;
+  background: $Header-footer-bg;
   min-height: 12vh;
 }
 
 .nav-inner {
   padding: 1rem 0;
-  // display: grid;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,10 +31,15 @@
   span,
   a {
     font-size: 1.6rem;
-    @include transition-std;
-    &.active {
-      color: $base-green;
-    }
+    font-weight: 600;
+    transition: all 0.3s ease-out;
+    // &:hover {
+    //   color: $stroke-Lbrow;
+    // }
+    // @include transition-std;
+    // &.active {
+    //   color: $stroke-Lbrow;
+    // }
   }
 
   li {
@@ -55,20 +60,15 @@
 
     &.active {
       a {
-        font-size: 1.9rem;
-        color: $base-green;
+        color: $stroke-Lbrow;
         @include transition-std;
       }
       &::before {
         width: 100%;
-        @include transition-std;
-      }
-    }
+        color: $stroke-Lbrow;
 
-    &:hover {
-      &::before {
-        width: 100%;
         @include transition-std;
+        background-color: $stroke-Lbrow;
       }
     }
   }
@@ -84,8 +84,9 @@
 
     span {
       font-size: 1.8rem;
+      font-weight: 600;
       line-height: 22.5px;
-      max-width: 24.2rem;
+      max-width: 22.5rem;
     }
 
     img {
@@ -107,6 +108,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+
   gap: 1rem;
 
   * {
@@ -119,9 +121,18 @@
   width: 2rem;
   height: 2rem;
   @include arrow-start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    fill: $stroke-Lbrow;
+    stroke: $stroke-Lbrow;
+  }
 
   &.active {
-    fill: $base-green;
+    fill: $stroke-Lbrow;
+    stroke: $stroke-Lbrow;
     @include arrow-end;
   }
 }
@@ -138,11 +149,12 @@
 
   span {
     font-size: 1.6rem;
+    font-weight: 600;
   }
 }
 
 .lang-dropdown {
-  background: $white;
+  background: $Header-footer-bg;
   z-index: 10;
   position: absolute;
   height: fit-content;
@@ -182,6 +194,7 @@
   top: calc(100% + 2rem);
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
+  background: $Header-footer-bg;
 
   &.disabled {
     height: 0;
@@ -190,15 +203,15 @@
 
   a {
     @include transition-std;
-    background: #fff;
+    // background: #fff;
     display: block;
     padding: 1.6rem 1.9rem;
     text-align: left;
     z-index: 300 !important;
 
     &:hover {
-      background: #01815e1a;
       @include transition-std;
+      color: $base-black;
     }
   }
 }
